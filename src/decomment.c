@@ -8,12 +8,12 @@ char process(FILE *input, FILE *output) {
     char c = fgetc(input);
     while (c != EOF) {
         if (c == '\"') {
-            printf("\nLINE ---> %i, literal ---> %c\n", line, c);
+            // printf("\nLINE ---> %i, literal ---> %c\n", line, c);
             putchar(c);
             putc(c, output);
             textHandler(linePtr, '\"', input, output);
         } else if (c == '\'') {
-            printf("\nLINE ---> %i, literal ---> %c\n", line, c);
+            // printf("\nLINE ---> %i, literal ---> %c\n", line, c);
             putchar(c);
             putc(c, output);
             textHandler(linePtr, '\'', input, output);
@@ -102,10 +102,10 @@ char multiLineCommentHandler(int *line, FILE *input, FILE *output) {
 }
 
 void textHandler(int *line, char terminatingChar, FILE *input, FILE *output) {
-    printf("\n\nLINE ---> %i, terminatingChar ---> %c\n\n", *line, terminatingChar);
+    // printf("\n\nLINE ---> %i, terminatingChar ---> %c\n\n", *line, terminatingChar);
     char c = fgetc(input);
     while ((c != EOF) && (c != terminatingChar)) {
-        printf("\n%c ---> IN_STRING, LITERAL ---> %c\n", c, terminatingChar);
+        // printf("\n%c ---> IN_STRING, LITERAL ---> %c\n", c, terminatingChar);
         putchar(c);
         putc(c, output);
         if (c == '\n') {
@@ -113,7 +113,7 @@ void textHandler(int *line, char terminatingChar, FILE *input, FILE *output) {
         }
         c = fgetc(input);
     }
-    printf("\n<<<------------------>>>\n");
+    // printf("\n<<<------------------>>>\n");
     if (c == terminatingChar) {
         putchar(terminatingChar);
         putc(terminatingChar, output);

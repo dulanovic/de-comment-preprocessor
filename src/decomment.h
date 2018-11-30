@@ -1,6 +1,6 @@
 
-#ifndef DE_COMMENT_DECOMMENT_HANDLE_H
-#define DE_COMMENT_DECOMMENT_HANDLE_H
+#ifndef DE_COMMENT_HANDLERS
+#define DE_COMMENT_HANDLERS
 
 char process(FILE *input, FILE *output);
 char possibleComment(int *line, FILE *input, FILE *output);
